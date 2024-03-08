@@ -608,12 +608,10 @@ struct cli_def *cli_init() {
 
   cli_register_command(cli, 0, "help", cli_help, PRIVILEGE_UNPRIVILEGED, MODE_ANY, "Show available commands");
   cli_register_command(cli, 0, "quit", cli_quit, PRIVILEGE_UNPRIVILEGED, MODE_ANY, "Disconnect");
-  cli_register_command(cli, 0, "logout", cli_quit, PRIVILEGE_UNPRIVILEGED, MODE_ANY, "Disconnect");
   cli_register_command(cli, 0, "exit", cli_exit, PRIVILEGE_UNPRIVILEGED, MODE_ANY, "Exit from current mode");
   cli_register_command(cli, 0, "history", cli_history, PRIVILEGE_UNPRIVILEGED, MODE_ANY,
                        "Show a list of previously run commands");
   cli_register_command(cli, 0, "enable", cli_enable, PRIVILEGE_UNPRIVILEGED, MODE_EXEC, "Turn on privileged commands");
-  cli_register_command(cli, 0, "disable", cli_disable, PRIVILEGE_PRIVILEGED, MODE_EXEC, "Turn off privileged commands");
 
   c = cli_register_command(cli, 0, "configure", 0, PRIVILEGE_PRIVILEGED, MODE_EXEC, "Enter configuration mode");
   if (!c) {
